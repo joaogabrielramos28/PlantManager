@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
@@ -33,6 +34,9 @@ export function UserIdentification() {
     setIsFilled(!!value);
   }
   function handleSubmit() {
+    if (!name) {
+      return Alert.alert("Me diz como chamar você 😢");
+    }
     navigation.navigate("Confirmation");
   }
 
