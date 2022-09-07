@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
@@ -33,10 +34,11 @@ export function UserIdentification() {
     setName(value);
     setIsFilled(!!value);
   }
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!name) {
       return Alert.alert("Me diz como chamar você 😢");
     }
+    await AsyncStorage.setItem("@plantmanager:user", name);
     navigation.navigate("Confirmation");
   }
 
