@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   KeyboardAvoidingView,
@@ -13,6 +14,7 @@ import { colors } from "../styles/colors";
 import { fonts } from "../styles/fonts";
 
 export function UserIdentification() {
+  const navigation = useNavigation();
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
   const [name, setName] = useState("");
@@ -30,7 +32,10 @@ export function UserIdentification() {
     setName(value);
     setIsFilled(!!value);
   }
-  1;
+  function handleSubmit() {
+    navigation.navigate("Confirmation");
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
@@ -54,7 +59,7 @@ export function UserIdentification() {
               onChangeText={handleInputChange}
             />
             <View style={styles.footer}>
-              <Button />
+              <Button title="Confirmar" onPress={handleSubmit} />
             </View>
           </View>
         </View>
