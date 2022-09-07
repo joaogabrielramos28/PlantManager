@@ -8,6 +8,7 @@ export declare global {
       Welcome: undefined;
       UserIdentification: undefined;
       Confirmation: undefined;
+      PlantSelect: undefined;
     }
   }
 }
