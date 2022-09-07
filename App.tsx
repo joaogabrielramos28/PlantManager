@@ -7,6 +7,7 @@ import {
   Jost_600SemiBold,
 } from "@expo-google-fonts/jost";
 import { ActivityIndicator } from "react-native";
+import { UserIdentification } from "./src/screens/UserIdentification";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,5 +17,5 @@ export default function App() {
   if (!fontsLoaded) {
     return <ActivityIndicator />;
   }
-  return <Welcome />;
+  return <UserIdentification />;
 }
