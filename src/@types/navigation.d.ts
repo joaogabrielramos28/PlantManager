@@ -1,5 +1,11 @@
+import { PlantProps } from "../libs/storage";
+
 export type ConfirmationNavigationProps = {
-  name: string;
+  title: string;
+  subtitle: string;
+  buttonTitle: string;
+  icon: "smile" | "hug";
+  nextScreen: "PlantSelect" | "MyPlants";
 };
 
 export declare global {
@@ -7,8 +13,10 @@ export declare global {
     interface RootParamList {
       Welcome: undefined;
       UserIdentification: undefined;
-      Confirmation: undefined;
+      Confirmation: ConfirmationNavigationProps;
       PlantSelect: undefined;
+      PlantSave: PlantProps;
+      MyPlants: undefined;
     }
   }
 }
