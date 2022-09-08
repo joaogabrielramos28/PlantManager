@@ -4,6 +4,7 @@ import { PlantSelect } from "../screens/PlantSelect";
 import { colors } from "../styles/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MyPlants } from "../screens/MyPlants";
+import { Platform } from "react-native";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -15,7 +16,7 @@ const AuthRoutes = () => {
         tabBarInactiveTintColor: colors.heading,
         tabBarLabelPosition: "below-icon",
         tabBarStyle: {
-          paddingVertical: 20,
+          paddingVertical: Platform.OS === "ios" ? 20 : 0,
           height: 88,
         },
       }}
